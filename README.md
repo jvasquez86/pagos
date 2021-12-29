@@ -1,0 +1,2 @@
+# inventario
+Sistema de inventario
