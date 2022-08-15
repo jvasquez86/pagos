@@ -1,2 +1,2 @@
 # inventario
-Sistema de inventario
+Sistema de pagos
