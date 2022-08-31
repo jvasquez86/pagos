@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    Blog
-</body>
-</html>
+<x-layouts.app title="Blog" meta-description="Blog de pagina">
+    <h1>Blog</h1>
+</x-layouts.app>
