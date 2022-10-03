@@ -25,8 +25,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome')->name('home');
 Route::view('/contact', 'contact')->name('contact');
-//Route::view('/blog', 'blog')->name('blog');
 Route::view('/about', 'about')->name('about');
 
 Route::get('/blog', [PostController::class, 'index'])->name('blog');
-Route::get('/blog/{id}', [PostController::class, 'detalle']);
+Route::get('/blog/crear', [PostController::class, 'crear'])->name('blog.crear');
+Route::get('/blog/{id}', [PostController::class, 'detalle'])->name('blog.detalle');
+Route::post('/blog', [PostController::class, 'store'])->name('blog.store');
+

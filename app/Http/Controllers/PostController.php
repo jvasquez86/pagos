@@ -19,10 +19,25 @@ class PostController extends Controller
 
     public function detalle(Post $id)
     {
-       
-       // $result = Post::find($id);
+
+        // $result = Post::find($id);
         //return $id;
         return view('posts.detalle', ['resultado' => $id]);
-     
+    }
+
+    public function crear()
+    {
+        return view('posts.crear');
+    }
+
+    public function store(Request $request)
+    {
+        $post = new Post;
+
+        $post->title = $request->input('titulo');
+        $post->cuerpo = $request->input('cuerpo');
+        $post->save();
+
+        return redirect()->route('blog');
     }
 }
