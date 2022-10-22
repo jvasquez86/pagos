@@ -20,8 +20,6 @@ class PostController extends Controller
     public function detalle(Post $id)
     {
 
-        // $result = Post::find($id);
-        //return $id;
         return view('posts.detalle', ['resultado' => $id]);
     }
 
@@ -32,12 +30,30 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'titulo' => ['required', 'min: 4'],
+            'cuerpo' => ['required']
+        ]);
+
         $post = new Post;
 
         $post->title = $request->input('titulo');
         $post->cuerpo = $request->input('cuerpo');
         $post->save();
 
+        session()->flash('status', 'Post Creado');
+
         return redirect()->route('blog');
+    }
+
+    public function editar(Post $id)
+    {
+        return view('posts.editar', ['resultado' => $id]);
+    }
+
+    public function actualiza(Post $id)
+    {
+       // return view('posts.editar', ['resultado' => $id]);
+       return $id;
     }
 }

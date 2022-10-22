@@ -29,6 +29,9 @@ Route::view('/about', 'about')->name('about');
 
 Route::get('/blog', [PostController::class, 'index'])->name('blog');
 Route::get('/blog/crear', [PostController::class, 'crear'])->name('blog.crear');
+Route::get('/blog/{id}/editar', [PostController::class, 'editar'])->name('blog.editar');
 Route::get('/blog/{id}', [PostController::class, 'detalle'])->name('blog.detalle');
 Route::post('/blog', [PostController::class, 'store'])->name('blog.store');
+Route::patch('/blog{id}', [PostController::class, 'actualiza'])->name('blog.actualiza');
+
 
