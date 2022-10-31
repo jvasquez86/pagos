@@ -3,24 +3,7 @@
 
     <form method="POST" action="{{ route('blog.store') }}">
         @csrf
-
-        @dump($errors)
-        <label for="">
-            Titulo <br>
-            <input name="titulo" type="text" value="{{ old('titulo') }}">
-            <br>
-            @error('titulo')
-                <small style="color: red">{{ $message }}</small>
-            @enderror
-        </label><br>
-        <label>
-            Cuerpo <br>
-            <textarea name="cuerpo">{{ old('cuerpo') }}</textarea>
-        </label>
-        <br>
-        @error('cuerpo')
-            <small style="color: red">{{ $message }}</small>
-        @enderror
+        @include('posts.form-fields')
         <br>
         <button type="submit">Enviar</button>
     </form>

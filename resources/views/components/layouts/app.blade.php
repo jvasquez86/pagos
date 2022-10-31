@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ $title }}</title>
     <meta name="" content="{{ $metaDescription }}">
-
+    @vite(['resources/css/app.scss', 'resources/js/app.js'])
 </head>
 
 <body>

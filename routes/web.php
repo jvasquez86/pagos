@@ -32,6 +32,7 @@ Route::get('/blog/crear', [PostController::class, 'crear'])->name('blog.crear');
 Route::get('/blog/{id}/editar', [PostController::class, 'editar'])->name('blog.editar');
 Route::get('/blog/{id}', [PostController::class, 'detalle'])->name('blog.detalle');
 Route::post('/blog', [PostController::class, 'store'])->name('blog.store');
-Route::patch('/blog{id}', [PostController::class, 'actualiza'])->name('blog.actualiza');
+Route::patch('/blog/{id}', [PostController::class, 'actualiza'])->name('blog.actualiza');
+Route::delete('/blog/{id}', [PostController::class, 'eliminar'])->name('blog.eliminar');
 
 
